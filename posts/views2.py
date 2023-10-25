@@ -1,5 +1,6 @@
 from django.views import generic
 from .models import post
+from django.shortcuts import render
 
 
 
@@ -25,3 +26,6 @@ class Editpost(generic.UpdateView):
 class deletepost(generic.DeleteView):
     model=post
     success_url='/blog/'
+
+def about_us(request):
+    return render(request, 'about.html')

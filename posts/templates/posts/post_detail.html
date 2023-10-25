@@ -1,10 +1,28 @@
+{% extends 'base.html' %}
 
-<h2>{{post}}</h2>
-<a href="lblog/{{pots.id}}/edit">Edit Post</a>
-<a href="lblog/{{pots.id}}/delete">Delete Post</a>
-<hr>
-<p>{{post.content}}</p>
-<p>{{post.auther}}</p>
-<p>{{post.publish_date}}</p>
+{% block boody %}
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container single-col-max-width">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">{{post}}</h2>
+				    <div class="meta mb-3"><span class="date">Published 2 days ago</span><span class="time">{{post.get_readtime}} read</span><span class="comment"><a  class="text-link" href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://made4dev.com"><img class="img-fluid" src="{{post.image.url}}" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a class="theme-link" href="https://made4dev.com?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+				    </figure>
+				    <p>{{post.content}}</p>
+				    
+    
+    </div><!--//main-wrapper-->
+	{% endblock boody %}    
 
-<img src="{{post.image.url}}" alt="">
+        
+       
+
+
